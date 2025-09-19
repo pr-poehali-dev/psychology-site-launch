@@ -422,17 +422,7 @@ export default function Index() {
           <p className="text-warm-200 mb-6">
             Профессиональная помощь для вашего психологического благополучия
           </p>
-          <div className="flex justify-center space-x-6">
-            <Button variant="ghost" size="icon" className="text-lavender-200 hover:text-white hover:bg-lavender-700">
-              <Icon name="Phone" className="w-5 h-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="text-lavender-200 hover:text-white hover:bg-lavender-700">
-              <Icon name="Mail" className="w-5 h-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="text-lavender-200 hover:text-white hover:bg-lavender-700">
-              <Icon name="MessageCircle" className="w-5 h-5" />
-            </Button>
-          </div>
+
           <div className="mt-8 pt-8 border-t border-warm-700 text-warm-300">
             <p>&copy; 2024 Психологический центр. Все права защищены.</p>
           </div>
