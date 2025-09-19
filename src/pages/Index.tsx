@@ -9,6 +9,7 @@ export default function Index() {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedCourse, setSelectedCourse] = useState<any>(null)
   const [selectedCertificate, setSelectedCertificate] = useState(0)
+  const [paymentModalOpen, setPaymentModalOpen] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId)
@@ -184,7 +185,10 @@ export default function Index() {
                   {item.label}
                 </button>
               ))}
-              <Button className="bg-warm-600 hover:bg-warm-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button 
+                onClick={() => setPaymentModalOpen(true)}
+                className="bg-warm-600 hover:bg-warm-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              >
                 Оплатить
               </Button>
             </div>
@@ -567,6 +571,95 @@ export default function Index() {
                   className="border-warm-300 text-warm-700 hover:bg-warm-50"
                 >
                   Закрыть
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Payment Modal */}
+      {paymentModalOpen && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-md w-full">
+            <div className="p-6">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold text-warm-800">Оплата услуг</h3>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  onClick={() => setPaymentModalOpen(false)}
+                  className="text-warm-600 hover:text-warm-800"
+                >
+                  <Icon name="X" className="w-5 h-5" />
+                </Button>
+              </div>
+              
+              <div className="space-y-4 mb-6">
+                <div className="grid gap-3">
+                  <Button 
+                    className="w-full justify-between p-4 h-auto bg-warm-50 hover:bg-warm-100 text-warm-800 border border-warm-200"
+                    variant="outline"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-warm-200 rounded-lg flex items-center justify-center">
+                        <Icon name="User" className="w-4 h-4 text-warm-700" />
+                      </div>
+                      <div className="text-left">
+                        <div className="font-medium">Частный прием</div>
+                        <div className="text-sm text-warm-600">Индивидуальная консультация</div>
+                      </div>
+                    </div>
+                    <div className="font-bold">3000 ₽</div>
+                  </Button>
+
+                  <Button 
+                    className="w-full justify-between p-4 h-auto bg-warm-50 hover:bg-warm-100 text-warm-800 border border-warm-200"
+                    variant="outline"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-warm-200 rounded-lg flex items-center justify-center">
+                        <Icon name="Video" className="w-4 h-4 text-warm-700" />
+                      </div>
+                      <div className="text-left">
+                        <div className="font-medium">Онлайн консультация</div>
+                        <div className="text-sm text-warm-600">Видеосвязь</div>
+                      </div>
+                    </div>
+                    <div className="font-bold">2500 ₽</div>
+                  </Button>
+
+                  <Button 
+                    className="w-full justify-between p-4 h-auto bg-warm-50 hover:bg-warm-100 text-warm-800 border border-warm-200"
+                    variant="outline"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-warm-200 rounded-lg flex items-center justify-center">
+                        <Icon name="BookOpen" className="w-4 h-4 text-warm-700" />
+                      </div>
+                      <div className="text-left">
+                        <div className="font-medium">Курс обучения</div>
+                        <div className="text-sm text-warm-600">Выберите программу</div>
+                      </div>
+                    </div>
+                    <div className="font-bold">от 5000 ₽</div>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Button 
+                  className="flex-1 bg-warm-600 hover:bg-warm-700"
+                  onClick={() => setPaymentModalOpen(false)}
+                >
+                  Перейти к оплате
+                </Button>
+                <Button 
+                  variant="outline" 
+                  onClick={() => setPaymentModalOpen(false)}
+                  className="border-warm-300 text-warm-700 hover:bg-warm-50"
+                >
+                  Отмена
                 </Button>
               </div>
             </div>
