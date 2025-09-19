@@ -256,7 +256,7 @@ export default function Index() {
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
                     <CardTitle className="text-warm-800">{course.title}</CardTitle>
-                    <Badge className="bg-warm-600 text-white hover:bg-warm-600">{course.price}</Badge>
+
                   </div>
                   <div className="flex gap-2 mb-2">
                     <Badge variant="outline" className="border-sage-300 text-sage-700">
