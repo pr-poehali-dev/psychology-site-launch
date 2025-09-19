@@ -280,9 +280,8 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-warm-800 mb-4">Направления работы</h2>
-            <p className="text-xl text-warm-700 max-w-2xl mx-auto">
-              Специализированные методы для решения различных задач
-            </p>
+            <p className="text-xl text-warm-700 max-w-2xl mx-auto">Специализированные методы для решения различных задач.
+Стоимость курсов и материалов от 1000р</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
