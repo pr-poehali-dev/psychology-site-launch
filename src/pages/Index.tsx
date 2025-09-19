@@ -149,23 +149,7 @@ export default function Index() {
               Создаю теплую атмосферу доверия, где каждый может найти поддержку и путь к внутреннему спокойствию. 
               Здесь вас ждет бережное отношение и профессиональная помощь.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-warm-600 hover:bg-warm-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                onClick={() => scrollToSection('contacts')}
-              >
-                Записаться на консультацию
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-warm-300 text-warm-700 hover:bg-warm-100 px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
-                onClick={() => scrollToSection('services')}
-              >
-                Узнать больше
-              </Button>
-            </div>
+
           </div>
         </div>
       </section>
