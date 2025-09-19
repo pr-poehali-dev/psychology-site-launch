@@ -18,25 +18,29 @@ export default function Index() {
       icon: 'Users',
       title: 'Частный прием',
       description: 'Индивидуальные консультации в комфортной обстановке',
-      price: 'от 3000 ₽'
+      price: 'от 3000 ₽',
+      image: 'https://cdn.poehali.dev/files/d30479c3-f982-4857-b100-cc7ebbcba643.jpeg'
     },
     {
       icon: 'Video',
       title: 'Онлайн консультации',
       description: 'Психологическая помощь в удобном формате',
-      price: 'от 2500 ₽'
+      price: 'от 2500 ₽',
+      image: 'https://cdn.poehali.dev/files/0c9b14bf-3e1a-4325-94be-dfa95b024bec.jpeg'
     },
     {
       icon: 'BookOpen',
       title: 'Курсы и программы',
       description: 'Комплексные программы личностного развития',
-      price: 'от 5000 ₽'
+      price: 'от 5000 ₽',
+      image: 'https://cdn.poehali.dev/files/c347332f-f2a9-46a3-9d91-cbb71f70606f.jpeg'
     },
     {
       icon: 'Calendar',
       title: 'Семинары',
       description: 'Групповые занятия по специальным темам',
-      price: 'от 1500 ₽'
+      price: 'от 1500 ₽',
+      image: 'https://cdn.poehali.dev/files/89f4ff26-2d51-4e2d-b4a4-dc6cce747431.jpeg'
     }
   ]
 
@@ -166,13 +170,18 @@ export default function Index() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-warm-200 hover:scale-105 bg-white/80 backdrop-blur-sm">
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-warm-200 hover:scale-105 bg-white/80 backdrop-blur-sm overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <Badge className="absolute top-3 right-3 bg-warm-600 text-white hover:bg-warm-600">{service.price}</Badge>
+                </div>
                 <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-warm-100 rounded-full flex items-center justify-center mx-auto mb-4 shadow-inner">
-                    <Icon name={service.icon} className="w-8 h-8 text-warm-600" />
-                  </div>
                   <CardTitle className="text-warm-800">{service.title}</CardTitle>
-                  <Badge className="bg-sage-200 text-sage-800 hover:bg-sage-200">{service.price}</Badge>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-center text-warm-700">
