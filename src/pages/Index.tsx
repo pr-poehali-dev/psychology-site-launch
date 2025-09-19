@@ -511,7 +511,7 @@ export default function Index() {
                 <Button 
                   className="flex-1 bg-warm-600 hover:bg-warm-700"
                   onClick={() => setModalOpen(false)}
-                >купит курс</Button>
+                >купить курс</Button>
                 <Button 
                   variant="outline" 
                   onClick={() => setModalOpen(false)}
