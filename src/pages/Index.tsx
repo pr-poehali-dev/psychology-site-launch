@@ -163,7 +163,10 @@ export default function Index() {
       <nav className="fixed top-0 w-full bg-warm-50/90 backdrop-blur-md border-b border-warm-200 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="font-bold text-warm-800 text-3xl">MindCare</h1>
+            <h1 className="font-bold text-warm-800 text-3xl flex items-center gap-2">
+              <span className="text-red-500">❤️</span>
+              MindCare
+            </h1>
             <div className="hidden md:flex space-x-8">
               {[
                 { id: 'home', label: 'Главная' },
