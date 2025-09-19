@@ -8,6 +8,7 @@ export default function Index() {
   const [activeSection, setActiveSection] = useState('home')
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedCourse, setSelectedCourse] = useState<any>(null)
+  const [selectedCertificate, setSelectedCertificate] = useState(0)
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId)
@@ -129,6 +130,19 @@ export default function Index() {
         'Техники снятия мышечных блоков',
         'Интеграция психики и тела'
       ]
+    }
+  ]
+
+  const certificates = [
+    {
+      image: 'https://cdn.poehali.dev/files/3d196932-ad64-4a91-bb98-add218323370.jpeg',
+      title: 'Сертификат профессионального соответствия',
+      description: 'Психолог-гипнолог, специалист по психодиагностике'
+    },
+    {
+      image: 'https://cdn.poehali.dev/files/67069846-dd15-4be5-9a1c-47d6c5937bf7.jpeg',
+      title: 'Диплом специалиста',
+      description: 'Московский социально-гуманитарный институт, психология'
     }
   ]
 
@@ -340,16 +354,43 @@ export default function Index() {
               </div>
             </div>
             <div className="lg:order-first">
-              <div className="relative">
-                <div className="w-full h-96 rounded-3xl overflow-hidden">
-                  <img 
-                    src="https://cdn.poehali.dev/files/14294dbd-1c2a-41ec-84d7-c7ef4e66913f.jpeg" 
-                    alt="Психолог" 
-                    className="w-full h-full object-contain"
-                  />
+              <div className="space-y-4">
+                {/* Основная картинка */}
+                <div className="relative">
+                  <div className="w-full h-96 rounded-3xl overflow-hidden shadow-2xl">
+                    <img 
+                      src={certificates[selectedCertificate].image}
+                      alt={certificates[selectedCertificate].title}
+                      className="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm rounded-lg p-3">
+                    <h4 className="text-white font-semibold text-sm">{certificates[selectedCertificate].title}</h4>
+                    <p className="text-gray-200 text-xs">{certificates[selectedCertificate].description}</p>
+                  </div>
                 </div>
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-warm-300 rounded-full opacity-40"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-sage-300 rounded-full opacity-40"></div>
+                
+                {/* Миниатюры */}
+                <div className="grid grid-cols-2 gap-3">
+                  {certificates.map((cert, index) => (
+                    <div 
+                      key={index}
+                      onClick={() => setSelectedCertificate(index)}
+                      className={`relative h-24 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 ${
+                        selectedCertificate === index 
+                          ? 'ring-2 ring-warm-500 scale-105' 
+                          : 'hover:scale-102 opacity-80 hover:opacity-100'
+                      }`}
+                    >
+                      <img 
+                        src={cert.image}
+                        alt={cert.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
