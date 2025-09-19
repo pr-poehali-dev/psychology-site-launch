@@ -305,7 +305,7 @@ export default function Index() {
                   <img 
                     src="https://cdn.poehali.dev/files/14294dbd-1c2a-41ec-84d7-c7ef4e66913f.jpeg" 
                     alt="Психолог" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-warm-300 rounded-full opacity-40"></div>
