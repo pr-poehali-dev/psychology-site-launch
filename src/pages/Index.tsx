@@ -303,7 +303,7 @@ export default function Index() {
               <div className="relative">
                 <div className="w-full h-96 rounded-3xl overflow-hidden">
                   <img 
-                    src="/img/6b4cda7a-6b1b-4f7f-9222-ee031e215d26.jpg" 
+                    src="https://cdn.poehali.dev/files/14294dbd-1c2a-41ec-84d7-c7ef4e66913f.jpeg" 
                     alt="Психолог" 
                     className="w-full h-full object-cover"
                   />
