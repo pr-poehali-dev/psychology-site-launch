@@ -344,7 +344,7 @@ export default function Index() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-warm-800">Email</h3>
-                  <p className="text-warm-700">info@psycholog.ru</p>
+                  <p className="text-warm-700">unix7777@ya.ru</p>
                 </div>
               </div>
               
@@ -354,7 +354,7 @@ export default function Index() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-warm-800">Адрес</h3>
-                  <p className="text-warm-700">г. Москва, ул. Примерная, д. 1</p>
+                  <p className="text-warm-700">г. Сочи  ,  Красноармеская 9Б , оф 6</p>
                 </div>
               </div>
               
