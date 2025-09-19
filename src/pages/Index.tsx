@@ -567,7 +567,7 @@ export default function Index() {
               </div>
 
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-warm-800 mb-3">Программа курса:</h4>
+                <h4 className="text-lg font-semibold text-warm-800 mb-3">Программа курса:   цена  от  1000р</h4>
                 <div className="grid gap-2">
                   {selectedCourse.programs?.map((program: string, index: number) => (
                     <div key={index} className="flex items-start gap-3 p-3 bg-warm-50 rounded-lg">
