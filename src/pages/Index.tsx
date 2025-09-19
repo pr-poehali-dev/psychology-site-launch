@@ -19,28 +19,28 @@ export default function Index() {
       title: 'Частный прием',
       description: 'Индивидуальные консультации в комфортной обстановке',
       price: 'от 3000 ₽',
-      image: 'https://cdn.poehali.dev/files/d30479c3-f982-4857-b100-cc7ebbcba643.jpeg'
+      image: 'img/31ed6ae8-602e-4962-8156-1e8b9e08f597.jpg'
     },
     {
       icon: 'Video',
       title: 'Онлайн консультации',
       description: 'Психологическая помощь в удобном формате',
       price: 'от 2500 ₽',
-      image: 'https://cdn.poehali.dev/files/0c9b14bf-3e1a-4325-94be-dfa95b024bec.jpeg'
+      image: 'img/157a933b-7b3a-4041-a8ec-28d38915ff9a.jpg'
     },
     {
       icon: 'BookOpen',
       title: 'Курсы и программы',
       description: 'Комплексные программы личностного развития',
       price: 'от 5000 ₽',
-      image: 'https://cdn.poehali.dev/files/c347332f-f2a9-46a3-9d91-cbb71f70606f.jpeg'
+      image: 'img/11a37884-6cfc-49fe-8b0e-4321227c845f.jpg'
     },
     {
       icon: 'Calendar',
       title: 'Семинары',
       description: 'Групповые занятия по специальным темам',
       price: 'от 1500 ₽',
-      image: 'https://cdn.poehali.dev/files/89f4ff26-2d51-4e2d-b4a4-dc6cce747431.jpeg'
+      image: 'img/7120afe1-8777-4c55-8be7-40b693cf1625.jpg'
     }
   ]
 
