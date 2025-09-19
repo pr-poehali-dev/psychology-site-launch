@@ -356,7 +356,7 @@ export default function Index() {
                   <h3 className="font-semibold text-warm-800 mb-2">Образование и сертификации:</h3>
                   <ul className="space-y-2">
                     <li>• Московский социально-гуманитарный институт</li>
-                    <li>• Международный институт гипнотерапии</li>
+                    <li></li>
                     <li>• Сертификат  психолог-гипнолог </li>
                   </ul>
                 </div>
