@@ -362,11 +362,11 @@ export default function Index() {
               <div className="space-y-4">
                 {/* Основная картинка */}
                 <div className="relative">
-                  <div className="w-full h-96 rounded-3xl overflow-hidden shadow-2xl">
+                  <div className="w-full h-96 rounded-3xl overflow-hidden shadow-2xl bg-warm-50 flex items-center justify-center">
                     <img 
                       src={certificates[selectedCertificate].image}
                       alt={certificates[selectedCertificate].title}
-                      className="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                      className="max-w-full max-h-full object-contain cursor-pointer"
                     />
                   </div>
                   <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm rounded-lg p-3">
