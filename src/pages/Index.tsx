@@ -135,6 +135,11 @@ export default function Index() {
 
   const certificates = [
     {
+      image: 'https://cdn.poehali.dev/files/c70a5034-f511-462a-aaf7-307f9c69a9b2.jpeg',
+      title: 'Практикующий психолог',
+      description: 'Профессиональная консультационная деятельность'
+    },
+    {
       image: 'https://cdn.poehali.dev/files/3d196932-ad64-4a91-bb98-add218323370.jpeg',
       title: 'Сертификат профессионального соответствия',
       description: 'Психолог-гипнолог, специалист по психодиагностике'
@@ -371,15 +376,15 @@ export default function Index() {
                 </div>
                 
                 {/* Миниатюры */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-3 gap-3">
                   {certificates.map((cert, index) => (
                     <div 
                       key={index}
                       onClick={() => setSelectedCertificate(index)}
-                      className={`relative h-24 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 ${
+                      className={`relative h-20 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 border-2 ${
                         selectedCertificate === index 
-                          ? 'ring-2 ring-warm-500 scale-105' 
-                          : 'hover:scale-102 opacity-80 hover:opacity-100'
+                          ? 'ring-2 ring-warm-500 scale-105 border-warm-500' 
+                          : 'border-warm-200 hover:scale-102 opacity-80 hover:opacity-100 hover:border-warm-300'
                       }`}
                     >
                       <img 
