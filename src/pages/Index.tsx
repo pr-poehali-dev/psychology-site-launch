@@ -157,6 +157,22 @@ export default function Index() {
     setModalOpen(true)
   }
 
+  const handleSubmitForm = () => {
+    const nameInput = document.querySelector('input[placeholder="Ваше имя"]') as HTMLInputElement
+    const phoneInput = document.querySelector('input[placeholder="Телефон"]') as HTMLInputElement
+    const messageInput = document.querySelector('textarea[placeholder="Опишите ваш запрос"]') as HTMLTextAreaElement
+    
+    const name = nameInput?.value || ''
+    const phone = phoneInput?.value || ''
+    const message = messageInput?.value || ''
+    
+    const subject = 'Новая заявка с сайта MindCare'
+    const body = `Имя: ${name}%0AТелефон: ${phone}%0AСообщение: ${message}`
+    const mailtoLink = `mailto:unix7777@ya.ru?subject=${subject}&body=${body}`
+    
+    window.location.href = mailtoLink
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-warm-50 via-cream-50 to-sage-50">
       {/* Navigation */}
@@ -492,7 +508,10 @@ export default function Index() {
                     placeholder="Опишите ваш запрос"
                   />
                 </div>
-                <Button className="w-full bg-warm-600 hover:bg-warm-700 shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button 
+                  onClick={handleSubmitForm}
+                  className="w-full bg-warm-600 hover:bg-warm-700 shadow-lg hover:shadow-xl transition-all duration-300"
+                >
                   Отправить заявку
                 </Button>
               </CardContent>
