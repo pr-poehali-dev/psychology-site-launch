@@ -560,8 +560,11 @@ export default function Index() {
               <div className="flex gap-3">
                 <Button 
                   className="flex-1 bg-warm-600 hover:bg-warm-700"
-                  onClick={() => setModalOpen(false)}
-                >купить курс</Button>
+                  onClick={() => {
+                    setModalOpen(false)
+                    setPaymentModalOpen(true)
+                  }}
+                >Оплатить</Button>
                 <Button 
                   variant="outline" 
                   onClick={() => setModalOpen(false)}
