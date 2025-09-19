@@ -148,8 +148,8 @@ export default function Index() {
             <div className="mb-8">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl cozy-glow">
                 <img 
-                  src="/img/df92b824-2e19-42cb-bb4f-44c7eca5514f.jpg" 
-                  alt="Уютный кабинет психолога" 
+                  src="https://cdn.poehali.dev/files/8fec520e-5d2f-4047-b2ac-95664cdc9085.jpeg" 
+                  alt="Психологическая сессия" 
                   className="w-full h-full object-cover"
                 />
               </div>
