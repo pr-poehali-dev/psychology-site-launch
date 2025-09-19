@@ -1,14 +1,428 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import Icon from '@/components/ui/icon'
 
-const Index = () => {
+export default function Index() {
+  const [activeSection, setActiveSection] = useState('home')
+
+  const scrollToSection = (sectionId: string) => {
+    setActiveSection(sectionId)
+    const element = document.getElementById(sectionId)
+    element?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const services = [
+    {
+      icon: 'Users',
+      title: 'Частный прием',
+      description: 'Индивидуальные консультации в комфортной обстановке',
+      price: 'от 3000 ₽'
+    },
+    {
+      icon: 'Video',
+      title: 'Онлайн консультации',
+      description: 'Психологическая помощь в удобном формате',
+      price: 'от 2500 ₽'
+    },
+    {
+      icon: 'BookOpen',
+      title: 'Курсы и программы',
+      description: 'Комплексные программы личностного развития',
+      price: 'от 5000 ₽'
+    },
+    {
+      icon: 'Calendar',
+      title: 'Семинары',
+      description: 'Групповые занятия по специальным темам',
+      price: 'от 1500 ₽'
+    }
+  ]
+
+  const directions = [
+    {
+      title: 'Гипнотерапия',
+      description: 'Работа с подсознанием для решения глубинных проблем',
+      tags: ['Избавление от фобий', 'Работа с зависимостями', 'Улучшение сна']
+    },
+    {
+      title: 'Психосоматика',
+      description: 'Изучение связи между психикой и телесными проявлениями',
+      tags: ['Снижение стресса', 'Работа с болями', 'Гармонизация состояния']
+    },
+    {
+      title: 'Аутотренинги',
+      description: 'Техники самовнушения и релаксации',
+      tags: ['Снятие напряжения', 'Повышение концентрации', 'Эмоциональный баланс']
+    },
+    {
+      title: 'Автопрограммирование',
+      description: 'Изменение установок и паттернов мышления',
+      tags: ['Достижение целей', 'Повышение мотивации', 'Личностный рост']
+    },
+    {
+      title: 'Медитативные практики',
+      description: 'Техники осознанности и внутреннего покоя',
+      tags: ['Майндфулнесс', 'Стрессоустойчивость', 'Духовное развитие']
+    },
+    {
+      title: 'Арт-терапия',
+      description: 'Творческие методы работы с эмоциями',
+      tags: ['Самовыражение', 'Работа с травмой', 'Креативность']
+    }
+  ]
+
+  const courses = [
+    {
+      title: 'Основы саморегуляции',
+      duration: '8 недель',
+      format: 'Онлайн + практика',
+      price: '15 000 ₽',
+      description: 'Комплексная программа обучения техникам управления эмоциональным состоянием'
+    },
+    {
+      title: 'Мастер гипноза',
+      duration: '12 недель',
+      format: 'Очно + супервизия',
+      price: '45 000 ₽',
+      description: 'Профессиональная подготовка специалистов по гипнотерапии'
+    },
+    {
+      title: 'Психосоматический подход',
+      duration: '6 недель',
+      format: 'Смешанный',
+      price: '22 000 ₽',
+      description: 'Изучение взаимосвязи психики и тела в терапевтической практике'
+    }
+  ]
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
-    </div>
-  );
-};
+    <div className="min-h-screen bg-gradient-to-br from-lavender-50 to-beige-50">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-lavender-200 z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl font-bold text-lavender-700">Психологический центр</h1>
+            <div className="hidden md:flex space-x-8">
+              {[
+                { id: 'home', label: 'Главная' },
+                { id: 'services', label: 'Услуги' },
+                { id: 'directions', label: 'Направления' },
+                { id: 'courses', label: 'Курсы' },
+                { id: 'about', label: 'Обо мне' },
+                { id: 'contacts', label: 'Контакты' }
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`transition-colors duration-200 ${
+                    activeSection === item.id 
+                      ? 'text-lavender-600 font-medium' 
+                      : 'text-gray-600 hover:text-lavender-500'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </nav>
 
-export default Index;
+      {/* Hero Section */}
+      <section id="home" className="pt-24 pb-20">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-bold text-lavender-800 mb-6 animate-fade-in">
+              Путь к внутренней гармонии
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              Профессиональная психологическая помощь с использованием современных методов. 
+              Гипнотерапия, психосоматика, аутотренинги для вашего благополучия.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="bg-lavender-600 hover:bg-lavender-700 text-white px-8 py-3 rounded-full"
+                onClick={() => scrollToSection('contacts')}
+              >
+                Записаться на консультацию
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-lavender-300 text-lavender-700 hover:bg-lavender-50 px-8 py-3 rounded-full"
+                onClick={() => scrollToSection('services')}
+              >
+                Узнать больше
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-white/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-lavender-800 mb-4">Услуги</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Комплексный подход к решению психологических задач
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-lavender-200 hover:scale-105">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 bg-lavender-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon name={service.icon} className="w-8 h-8 text-lavender-600" />
+                  </div>
+                  <CardTitle className="text-lavender-700">{service.title}</CardTitle>
+                  <Badge className="bg-beige-200 text-beige-800 hover:bg-beige-200">{service.price}</Badge>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-center text-gray-600">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Directions Section */}
+      <section id="directions" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-lavender-800 mb-4">Направления работы</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Специализированные методы для решения различных задач
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {directions.map((direction, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-lavender-200">
+                <CardHeader>
+                  <CardTitle className="text-lavender-700">{direction.title}</CardTitle>
+                  <CardDescription>{direction.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {direction.tags.map((tag, tagIndex) => (
+                      <Badge key={tagIndex} variant="secondary" className="bg-lavender-100 text-lavender-700 hover:bg-lavender-100">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Courses Section */}
+      <section id="courses" className="py-20 bg-white/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-lavender-800 mb-4">Курсы и программы</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Обучающие программы для специалистов и личностного развития
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {courses.map((course, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-lavender-200">
+                <CardHeader>
+                  <div className="flex justify-between items-start mb-2">
+                    <CardTitle className="text-lavender-700">{course.title}</CardTitle>
+                    <Badge className="bg-lavender-600 text-white hover:bg-lavender-600">{course.price}</Badge>
+                  </div>
+                  <div className="flex gap-2 mb-2">
+                    <Badge variant="outline" className="border-beige-300 text-beige-700">
+                      <Icon name="Clock" className="w-3 h-3 mr-1" />
+                      {course.duration}
+                    </Badge>
+                    <Badge variant="outline" className="border-beige-300 text-beige-700">
+                      <Icon name="Monitor" className="w-3 h-3 mr-1" />
+                      {course.format}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>{course.description}</CardDescription>
+                  <Button className="w-full mt-4 bg-lavender-600 hover:bg-lavender-700">
+                    Подробнее
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-lavender-800 mb-6">Обо мне</h2>
+              <div className="space-y-4 text-gray-600 text-lg">
+                <p>
+                  Меня зовут [Имя], и я практикующий психолог с более чем 10-летним опытом работы. 
+                  Специализируюсь на современных методах психотерапии, включая гипнотерапию и психосоматический подход.
+                </p>
+                <p>
+                  Мой подход основан на интеграции различных психологических школ и техник, 
+                  что позволяет найти индивидуальное решение для каждого клиента.
+                </p>
+                <div className="pt-4">
+                  <h3 className="font-semibold text-lavender-700 mb-2">Образование и сертификации:</h3>
+                  <ul className="space-y-2">
+                    <li>• Московский государственный университет, факультет психологии</li>
+                    <li>• Международный институт гипнотерапии</li>
+                    <li>• Сертификат по психосоматической медицине</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="lg:order-first">
+              <div className="relative">
+                <div className="w-full h-96 rounded-3xl overflow-hidden">
+                  <img 
+                    src="/img/6b4cda7a-6b1b-4f7f-9222-ee031e215d26.jpg" 
+                    alt="Психолог" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-lavender-300 rounded-full opacity-50"></div>
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-beige-300 rounded-full opacity-50"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contacts Section */}
+      <section id="contacts" className="py-20 bg-white/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-lavender-800 mb-4">Контакты</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Свяжитесь со мной для записи на консультацию
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-lavender-100 rounded-full flex items-center justify-center">
+                  <Icon name="Phone" className="w-6 h-6 text-lavender-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lavender-700">Телефон</h3>
+                  <p className="text-gray-600">+7 (999) 123-45-67</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-lavender-100 rounded-full flex items-center justify-center">
+                  <Icon name="Mail" className="w-6 h-6 text-lavender-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lavender-700">Email</h3>
+                  <p className="text-gray-600">info@psycholog.ru</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-lavender-100 rounded-full flex items-center justify-center">
+                  <Icon name="MapPin" className="w-6 h-6 text-lavender-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lavender-700">Адрес</h3>
+                  <p className="text-gray-600">г. Москва, ул. Примерная, д. 1</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-lavender-100 rounded-full flex items-center justify-center">
+                  <Icon name="Clock" className="w-6 h-6 text-lavender-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lavender-700">Время работы</h3>
+                  <p className="text-gray-600">Пн-Пт: 10:00-20:00<br />Сб: 11:00-17:00</p>
+                </div>
+              </div>
+            </div>
+            
+            <Card className="border-lavender-200">
+              <CardHeader>
+                <CardTitle className="text-lavender-700">Записаться на консультацию</CardTitle>
+                <CardDescription>Заполните форму и я свяжусь с вами в ближайшее время</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Имя</label>
+                  <input 
+                    type="text" 
+                    className="w-full p-3 border border-lavender-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-lavender-500"
+                    placeholder="Ваше имя"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Телефон</label>
+                  <input 
+                    type="tel" 
+                    className="w-full p-3 border border-lavender-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-lavender-500"
+                    placeholder="+7 (999) 123-45-67"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Сообщение</label>
+                  <textarea 
+                    rows={4}
+                    className="w-full p-3 border border-lavender-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-lavender-500"
+                    placeholder="Опишите ваш запрос"
+                  />
+                </div>
+                <Button className="w-full bg-lavender-600 hover:bg-lavender-700">
+                  Отправить заявку
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-lavender-800 text-white py-12">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-2xl font-bold mb-4">Психологический центр</h3>
+          <p className="text-lavender-200 mb-6">
+            Профессиональная помощь для вашего психологического благополучия
+          </p>
+          <div className="flex justify-center space-x-6">
+            <Button variant="ghost" size="icon" className="text-lavender-200 hover:text-white hover:bg-lavender-700">
+              <Icon name="Phone" className="w-5 h-5" />
+            </Button>
+            <Button variant="ghost" size="icon" className="text-lavender-200 hover:text-white hover:bg-lavender-700">
+              <Icon name="Mail" className="w-5 h-5" />
+            </Button>
+            <Button variant="ghost" size="icon" className="text-lavender-200 hover:text-white hover:bg-lavender-700">
+              <Icon name="MessageCircle" className="w-5 h-5" />
+            </Button>
+          </div>
+          <div className="mt-8 pt-8 border-t border-lavender-700 text-lavender-300">
+            <p>&copy; 2024 Психологический центр. Все права защищены.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}

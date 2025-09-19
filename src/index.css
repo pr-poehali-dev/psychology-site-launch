@@ -1,38 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 248 246 255;
+    --foreground: 60 9% 18%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 255 255 255;
+    --card-foreground: 60 9% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 255 255 255;
+    --popover-foreground: 60 9% 18%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 212 55% 47%;
+    --primary-foreground: 255 255 255;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 60 13% 91%;
+    --secondary-foreground: 60 9% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 60 13% 91%;
+    --muted-foreground: 60 5% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 240 33% 93%;
+    --accent-foreground: 60 9% 18%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 255 255 255;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 23% 87%;
+    --input: 240 23% 87%;
+    --ring: 212 55% 47%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -97,5 +99,15 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", sans-serif;
   }
 }
