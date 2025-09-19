@@ -530,7 +530,7 @@ export default function Index() {
 
           <div className="mt-8 pt-8 border-t border-warm-700 text-warm-300">
             <p>&copy; 2024 Психологический центр. Все права защищены.</p>
-            <p className="text-xs mt-2">ИП Паклин Сергей Васильевич | ИНН 594200005879 | ОГРНИП 305591619400016</p>
+            <p className="mt-2 text-base">ИП Паклин Сергей Васильевич | ИНН 594200005879 | ОГРНИП 305591619400016</p>
           </div>
         </div>
       </footer>
