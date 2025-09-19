@@ -184,6 +184,9 @@ export default function Index() {
                   {item.label}
                 </button>
               ))}
+              <Button className="bg-warm-600 hover:bg-warm-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                Оплатить
+              </Button>
             </div>
           </div>
         </div>
