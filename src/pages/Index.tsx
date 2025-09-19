@@ -49,37 +49,37 @@ export default function Index() {
       title: 'Гипнотерапия',
       description: 'Работа с подсознанием для решения глубинных проблем',
       tags: ['Избавление от фобий', 'Работа с зависимостями', 'Улучшение сна'],
-      image: 'https://cdn.poehali.dev/files/0c9b14bf-3e1a-4325-94be-dfa95b024bec.jpeg'
+      image: 'img/b5ae03af-a105-4fc8-9052-a60cac773650.jpg'
     },
     {
       title: 'Психосоматика',
       description: 'Изучение связи между психикой и телесными проявлениями',
       tags: ['Снижение стресса', 'Работа с болями', 'Гармонизация состояния'],
-      image: 'https://cdn.poehali.dev/files/89f4ff26-2d51-4e2d-b4a4-dc6cce747431.jpeg'
+      image: 'img/1e078643-c07c-4392-a4ed-6d3f8759faeb.jpg'
     },
     {
       title: 'Аутотренинги',
       description: 'Техники самовнушения и релаксации',
       tags: ['Снятие напряжения', 'Повышение концентрации', 'Эмоциональный баланс'],
-      image: 'https://cdn.poehali.dev/files/d30479c3-f982-4857-b100-cc7ebbcba643.jpeg'
+      image: 'img/c85476d1-3fae-42ec-be6c-f480b451e95c.jpg'
     },
     {
       title: 'Автопрограммирование',
       description: 'Изменение установок и паттернов мышления',
       tags: ['Достижение целей', 'Повышение мотивации', 'Личностный рост'],
-      image: 'https://cdn.poehali.dev/files/c347332f-f2a9-46a3-9d91-cbb71f70606f.jpeg'
+      image: 'img/e7503082-d4d2-46e6-a00d-fbefac703b77.jpg'
     },
     {
       title: 'Медитативные практики',
       description: 'Техники осознанности и внутреннего покоя',
       tags: ['Майндфулнесс', 'Стрессоустойчивость', 'Духовное развитие'],
-      image: 'https://cdn.poehali.dev/files/0c9b14bf-3e1a-4325-94be-dfa95b024bec.jpeg'
+      image: 'img/cde0d741-3c69-4b3c-b65e-09c0dbacaea2.jpg'
     },
     {
       title: 'Арт-терапия',
       description: 'Творческие методы работы с эмоциями',
       tags: ['Самовыражение', 'Работа с травмой', 'Креативность'],
-      image: 'https://cdn.poehali.dev/files/89f4ff26-2d51-4e2d-b4a4-dc6cce747431.jpeg'
+      image: 'img/c46e7fd1-fb05-415b-8f36-3b913c8d5e2e.jpg'
     }
   ]
 
