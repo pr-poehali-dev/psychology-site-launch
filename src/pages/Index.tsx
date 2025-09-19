@@ -48,32 +48,38 @@ export default function Index() {
     {
       title: 'Гипнотерапия',
       description: 'Работа с подсознанием для решения глубинных проблем',
-      tags: ['Избавление от фобий', 'Работа с зависимостями', 'Улучшение сна']
+      tags: ['Избавление от фобий', 'Работа с зависимостями', 'Улучшение сна'],
+      image: 'https://cdn.poehali.dev/files/0c9b14bf-3e1a-4325-94be-dfa95b024bec.jpeg'
     },
     {
       title: 'Психосоматика',
       description: 'Изучение связи между психикой и телесными проявлениями',
-      tags: ['Снижение стресса', 'Работа с болями', 'Гармонизация состояния']
+      tags: ['Снижение стресса', 'Работа с болями', 'Гармонизация состояния'],
+      image: 'https://cdn.poehali.dev/files/89f4ff26-2d51-4e2d-b4a4-dc6cce747431.jpeg'
     },
     {
       title: 'Аутотренинги',
       description: 'Техники самовнушения и релаксации',
-      tags: ['Снятие напряжения', 'Повышение концентрации', 'Эмоциональный баланс']
+      tags: ['Снятие напряжения', 'Повышение концентрации', 'Эмоциональный баланс'],
+      image: 'https://cdn.poehali.dev/files/d30479c3-f982-4857-b100-cc7ebbcba643.jpeg'
     },
     {
       title: 'Автопрограммирование',
       description: 'Изменение установок и паттернов мышления',
-      tags: ['Достижение целей', 'Повышение мотивации', 'Личностный рост']
+      tags: ['Достижение целей', 'Повышение мотивации', 'Личностный рост'],
+      image: 'https://cdn.poehali.dev/files/c347332f-f2a9-46a3-9d91-cbb71f70606f.jpeg'
     },
     {
       title: 'Медитативные практики',
       description: 'Техники осознанности и внутреннего покоя',
-      tags: ['Майндфулнесс', 'Стрессоустойчивость', 'Духовное развитие']
+      tags: ['Майндфулнесс', 'Стрессоустойчивость', 'Духовное развитие'],
+      image: 'https://cdn.poehali.dev/files/0c9b14bf-3e1a-4325-94be-dfa95b024bec.jpeg'
     },
     {
       title: 'Арт-терапия',
       description: 'Творческие методы работы с эмоциями',
-      tags: ['Самовыражение', 'Работа с травмой', 'Креативность']
+      tags: ['Самовыражение', 'Работа с травмой', 'Креативность'],
+      image: 'https://cdn.poehali.dev/files/89f4ff26-2d51-4e2d-b4a4-dc6cce747431.jpeg'
     }
   ]
 
@@ -206,7 +212,15 @@ export default function Index() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {directions.map((direction, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-warm-200">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-warm-200 overflow-hidden">
+                <div className="relative h-32 overflow-hidden">
+                  <img 
+                    src={direction.image} 
+                    alt={direction.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
                 <CardHeader>
                   <CardTitle className="text-warm-800">{direction.title}</CardTitle>
                   <CardDescription>{direction.description}</CardDescription>
