@@ -6,6 +6,8 @@ import Icon from '@/components/ui/icon'
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home')
+  const [modalOpen, setModalOpen] = useState(false)
+  const [selectedCourse, setSelectedCourse] = useState<any>(null)
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId)
@@ -88,24 +90,52 @@ export default function Index() {
       title: 'Основы саморегуляции',
       duration: '8 недель',
       format: 'Онлайн + практика',
-      price: '15 000 ₽',
-      description: 'Комплексная программа обучения техникам управления эмоциональным состоянием'
+      description: 'Комплексная программа обучения техникам управления эмоциональным состоянием',
+      programs: [
+        'Дыхательные техники и релаксация',
+        'Управление стрессом и тревожностью',
+        'Эмоциональная саморегуляция',
+        'Практики майндфулнесс',
+        'Техники быстрого восстановления',
+        'Работа с негативными установками'
+      ]
     },
     {
       title: 'Мастер гипноза',
       duration: '12 недель',
       format: 'Очно + супервизия',
-      price: '45 000 ₽',
-      description: 'Профессиональная подготовка специалистов по гипнотерапии'
+      description: 'Профессиональная подготовка специалистов по гипнотерапии',
+      programs: [
+        'Основы гипнотического воздействия',
+        'Техники погружения в транс',
+        'Работа с фобиями и страхами',
+        'Избавление от вредных привычек',
+        'Регрессивная терапия',
+        'Эриксоновский гипноз',
+        'Самогипноз и аутотренинг',
+        'Этика и безопасность в гипнотерапии'
+      ]
     },
     {
       title: 'Психосоматический подход',
       duration: '6 недель',
       format: 'Смешанный',
-      price: '22 000 ₽',
-      description: 'Изучение взаимосвязи психики и тела в терапевтической практике'
+      description: 'Изучение взаимосвязи психики и тела в терапевтической практике',
+      programs: [
+        'Теория психосоматических расстройств',
+        'Телесно-ориентированная терапия',
+        'Работа с хронической болью',
+        'Диагностика психосоматики',
+        'Техники снятия мышечных блоков',
+        'Интеграция психики и тела'
+      ]
     }
   ]
+
+  const openModal = (course: any) => {
+    setSelectedCourse(course)
+    setModalOpen(true)
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-warm-50 via-cream-50 to-sage-50">
@@ -271,7 +301,10 @@ export default function Index() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription>{course.description}</CardDescription>
-                  <Button className="w-full mt-4 bg-warm-600 hover:bg-warm-700 shadow-md hover:shadow-lg transition-all duration-300">
+                  <Button 
+                    onClick={() => openModal(course)}
+                    className="w-full mt-4 bg-warm-600 hover:bg-warm-700 shadow-md hover:shadow-lg transition-all duration-300"
+                  >
                     Подробнее
                   </Button>
                 </CardContent>
@@ -428,6 +461,71 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Modal */}
+      {modalOpen && selectedCourse && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-2xl font-bold text-warm-800">{selectedCourse.title}</h3>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  onClick={() => setModalOpen(false)}
+                  className="text-warm-600 hover:text-warm-800"
+                >
+                  <Icon name="X" className="w-5 h-5" />
+                </Button>
+              </div>
+              
+              <div className="mb-6">
+                <div className="flex gap-4 mb-4">
+                  <Badge variant="outline" className="border-sage-300 text-sage-700">
+                    <Icon name="Clock" className="w-3 h-3 mr-1" />
+                    {selectedCourse.duration}
+                  </Badge>
+                  <Badge variant="outline" className="border-warm-300 text-warm-700">
+                    <Icon name="Users" className="w-3 h-3 mr-1" />
+                    {selectedCourse.format}
+                  </Badge>
+                </div>
+                <p className="text-warm-700 mb-6">{selectedCourse.description}</p>
+              </div>
+
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-warm-800 mb-3">Программа курса:</h4>
+                <div className="grid gap-2">
+                  {selectedCourse.programs?.map((program: string, index: number) => (
+                    <div key={index} className="flex items-start gap-3 p-3 bg-warm-50 rounded-lg">
+                      <div className="w-6 h-6 bg-warm-200 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                        <span className="text-xs font-medium text-warm-700">{index + 1}</span>
+                      </div>
+                      <span className="text-warm-700">{program}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Button 
+                  className="flex-1 bg-warm-600 hover:bg-warm-700"
+                  onClick={() => setModalOpen(false)}
+                >
+                  Записаться на курс
+                </Button>
+                <Button 
+                  variant="outline" 
+                  onClick={() => setModalOpen(false)}
+                  className="border-warm-300 text-warm-700 hover:bg-warm-50"
+                >
+                  Закрыть
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
