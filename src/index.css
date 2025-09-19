@@ -6,35 +6,35 @@
 
 @layer base {
   :root {
-    --background: 248 246 255;
-    --foreground: 60 9% 18%;
+    --background: 45 30% 96%;
+    --foreground: 25 15% 25%;
 
-    --card: 255 255 255;
-    --card-foreground: 60 9% 18%;
+    --card: 45 50% 98%;
+    --card-foreground: 25 15% 25%;
 
-    --popover: 255 255 255;
-    --popover-foreground: 60 9% 18%;
+    --popover: 45 50% 98%;
+    --popover-foreground: 25 15% 25%;
 
-    --primary: 212 55% 47%;
-    --primary-foreground: 255 255 255;
+    --primary: 25 45% 55%;
+    --primary-foreground: 45 50% 98%;
 
-    --secondary: 60 13% 91%;
-    --secondary-foreground: 60 9% 18%;
+    --secondary: 35 35% 88%;
+    --secondary-foreground: 25 15% 25%;
 
-    --muted: 60 13% 91%;
-    --muted-foreground: 60 5% 46%;
+    --muted: 35 35% 88%;
+    --muted-foreground: 25 8% 45%;
 
-    --accent: 240 33% 93%;
-    --accent-foreground: 60 9% 18%;
+    --accent: 40 45% 90%;
+    --accent-foreground: 25 15% 25%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 255 255 255;
+    --destructive-foreground: 45 50% 98%;
 
-    --border: 240 23% 87%;
-    --input: 240 23% 87%;
-    --ring: 212 55% 47%;
+    --border: 35 25% 85%;
+    --input: 35 25% 85%;
+    --ring: 25 45% 55%;
 
-    --radius: 1rem;
+    --radius: 1.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -109,5 +109,18 @@
   h5,
   h6 {
     font-family: "Montserrat", sans-serif;
+  }
+
+  /* Теплые элементы безопасности */
+  .warm-shadow {
+    box-shadow: 0 10px 30px rgba(139, 107, 71, 0.1);
+  }
+
+  .cozy-glow {
+    box-shadow: 0 0 20px rgba(248, 240, 232, 0.6);
+  }
+
+  .safe-border {
+    border: 2px solid rgba(232, 208, 184, 0.3);
   }
 }
