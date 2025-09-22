@@ -204,12 +204,12 @@ export default function Index() {
                   {item.label}
                 </button>
               ))}
-              <Button 
-                onClick={() => setPaymentModalOpen(true)}
-                className="bg-warm-600 hover:bg-warm-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              <button 
+                className="bg-warm-600 hover:bg-warm-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
+                btn-pay-6kwo9avfxomyab7q80fknow06
               >
                 Оплатить
-              </Button>
+              </button>
             </div>
           </div>
         </div>
