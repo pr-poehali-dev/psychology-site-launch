@@ -669,12 +669,12 @@ export default function Index() {
               </div>
 
               <div className="flex gap-3">
-                <Button 
-                  className="flex-1 bg-warm-600 hover:bg-warm-700"
-                  onClick={() => setPaymentModalOpen(false)}
+                <button 
+                  className="flex-1 bg-warm-600 hover:bg-warm-700 text-white px-4 py-2 rounded-md font-medium transition-colors"
+                  btn-pay-6kwo9avfxomyab7q80fknow06
                 >
                   Перейти к оплате
-                </Button>
+                </button>
                 <Button 
                   variant="outline" 
                   onClick={() => setPaymentModalOpen(false)}

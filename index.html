@@ -25,6 +25,11 @@
 
     <meta name="pp-name" value="psychology-site-launch">
       <script src="https://cdn.poehali.dev/intertnal/js/inspector-min.js"></script>
+      <script src="https://paymaster.ru/cpay/sdk/payment-widget.js"></script>
+      <style>
+        button[btn-pay-6kwo9avfxomyab7q80fknow06] { display: inline-block; padding: 16px 24px; border-radius: 8px; color: #fff; background-color: #58bfe8; font-size: 16px; font-family: "Lato", "Arial", sans-serif; line-height: 16px; outline: none; border: none; }
+        button[btn-pay-6kwo9avfxomyab7q80fknow06]:hover { opacity: 0.9; cursor: pointer; }
+      </style>
   </head>
 
 <body>
@@ -60,5 +65,14 @@
     <div><img src="https://mc.yandex.ru/watch/101026698" style="position:absolute; left:-9999px;" alt=""/></div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
+
+<script>
+if (document.querySelector("[btn-pay-6kwo9avfxomyab7q80fknow06]")) {
+document.querySelector("[btn-pay-6kwo9avfxomyab7q80fknow06]").addEventListener("click", function () {
+var paymentWidget = new cpay.PaymentWidget();
+paymentWidget.init({"merchantId":"65e582de-004b-4c24-96b2-bd0e0777e959","invoice":{"description":"MindCare"},"amount":{"currency":"RUB","value":0},"receipt":null,"paymentForm":{"theme":"light","primaryColor":"#58bfe8","productCard":{"title":"MindCare","description":"MindCare","imageUrl":null},"fields":[{"type":"input","name":"customerEmail","label":"E-mail","hint":null,"required":true,"selectOptions":null,"additionalAmount":null},{"type":"input","name":"amount","label":"Сумма","hint":null,"required":true,"selectOptions":null,"additionalAmount":null}]}});
+});
+}
+</script>
 </body>
 </html>
