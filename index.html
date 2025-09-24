@@ -67,39 +67,12 @@
 <!-- /Yandex.Metrika counter -->
 
 <script>
-function initPaymaster() {
-  const payButtons = document.querySelectorAll("[data-btn-pay='6kwo9avfxomyab7q80fknow06']");
-  payButtons.forEach(function(button) {
-    button.addEventListener("click", function () {
-      if (typeof cpay !== 'undefined') {
-        var paymentWidget = new cpay.PaymentWidget();
-        paymentWidget.init({
-          "merchantId":"65e582de-004b-4c24-96b2-bd0e0777e959",
-          "invoice":{"description":"MindCare"},
-          "amount":{"currency":"RUB","value":0},
-          "receipt":null,
-          "paymentForm":{
-            "theme":"light",
-            "primaryColor":"#58bfe8",
-            "productCard":{"title":"MindCare","description":"MindCare","imageUrl":null},
-            "fields":[
-              {"type":"input","name":"customerEmail","label":"E-mail","hint":null,"required":true,"selectOptions":null,"additionalAmount":null},
-              {"type":"input","name":"amount","label":"Сумма","hint":null,"required":true,"selectOptions":null,"additionalAmount":null}
-            ]
-          }
-        });
-      } else {
-        console.error('PayMaster SDK не загружен');
-      }
-    });
-  });
+if (document.querySelector("[btn-pay-nldizlugp9shjhaznfvxvk9gp]")) {
+document.querySelector("[btn-pay-nldizlugp9shjhaznfvxvk9gp]").addEventListener("click", function () {
+var paymentWidget = new cpay.PaymentWidget();
+paymentWidget.init({"merchantId":"65e582de-004b-4c24-96b2-bd0e0777e959","invoice":{"description":"MindCare"},"amount":{"currency":"RUB","value":0},"receipt":null,"paymentForm":{"theme":"light","primaryColor":"#58bfe8","productCard":{"title":"MindCare","description":"MindCare","imageUrl":null},"fields":[{"type":"input","name":"customerEmail","label":"E-mail","hint":null,"required":true,"selectOptions":null,"additionalAmount":null},{"type":"input","name":"amount","label":"Сумма","hint":null,"required":true,"selectOptions":null,"additionalAmount":null}]}});
+});
 }
-
-// Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', initPaymaster);
-
-// Переинициализация для динамически добавленных элементов
-setInterval(initPaymaster, 1000);
 </script>
 </body>
 </html>

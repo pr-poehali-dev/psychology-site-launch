@@ -206,7 +206,7 @@ export default function Index() {
               ))}
               <button 
                 className="bg-warm-600 hover:bg-warm-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
-                data-btn-pay="6kwo9avfxomyab7q80fknow06"
+                btn-pay-nldizlugp9shjhaznfvxvk9gp=""
               >
                 Оплатить
               </button>
@@ -671,7 +671,7 @@ export default function Index() {
               <div className="flex gap-3">
                 <button 
                   className="flex-1 bg-warm-600 hover:bg-warm-700 text-white px-4 py-2 rounded-md font-medium transition-colors"
-                  data-btn-pay="6kwo9avfxomyab7q80fknow06"
+                  btn-pay-nldizlugp9shjhaznfvxvk9gp=""
                 >
                   Перейти к оплате
                 </button>
