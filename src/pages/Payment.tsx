@@ -62,7 +62,7 @@ const Payment = () => {
           {/* Карточка оплаты */}
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
             <div className="text-center mb-8">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-stone-500">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-slate-50">
                 <Icon name="CreditCard" size={32} className="text-warm-600" />
               </div>
               <h2 className="font-semibold mb-2 text-6xl text-blue-700">
