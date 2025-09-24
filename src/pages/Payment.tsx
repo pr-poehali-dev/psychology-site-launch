@@ -47,10 +47,7 @@ const Payment = () => {
         <button 
           onClick={() => window.history.back()}
           className="flex items-center gap-2 text-warm-600 hover:text-warm-700 transition-colors mb-6"
-        >
-          <Icon name="ArrowLeft" size={20} />
-          Назад
-        </button>
+        ></button>
       </div>
 
       {/* Основной контент */}
@@ -58,12 +55,8 @@ const Payment = () => {
         <div className="max-w-2xl mx-auto">
           {/* Заголовок */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-warm-800 mb-4">
-              Оплата консультации
-            </h1>
-            <p className="text-lg text-warm-600">
-              Безопасная оплата психологических услуг
-            </p>
+            <h1 className="text-4xl font-bold text-warm-800 mb-4"></h1>
+            <p className="text-lg text-warm-600"></p>
           </div>
 
           {/* Карточка оплаты */}
@@ -75,24 +68,22 @@ const Payment = () => {
               <h2 className="text-2xl font-semibold text-warm-800 mb-2">
                 MindCare
               </h2>
-              <p className="text-warm-600">
-                Профессиональная психологическая поддержка
-              </p>
+              <p className="text-warm-600"></p>
             </div>
 
             {/* Информация об услугах */}
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <div className="text-center p-4 bg-warm-50 rounded-lg">
-                <h3 className="font-semibold text-warm-800 mb-1">Индивидуальная</h3>
-                <p className="text-warm-600">от 3000 ₽</p>
+                <h3 className="font-semibold text-warm-800 mb-1"></h3>
+                <p className="text-warm-600"></p>
               </div>
               <div className="text-center p-4 bg-warm-50 rounded-lg">
-                <h3 className="font-semibold text-warm-800 mb-1">Семейная</h3>
-                <p className="text-warm-600">от 4000 ₽</p>
+                <h3 className="font-semibold text-warm-800 mb-1"></h3>
+                <p className="text-warm-600"></p>
               </div>
               <div className="text-center p-4 bg-warm-50 rounded-lg">
-                <h3 className="font-semibold text-warm-800 mb-1">Групповая</h3>
-                <p className="text-warm-600">от 5000 ₽</p>
+                <h3 className="font-semibold text-warm-800 mb-1"></h3>
+                <p className="text-warm-600"></p>
               </div>
             </div>
 
