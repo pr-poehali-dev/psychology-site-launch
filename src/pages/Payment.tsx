@@ -107,30 +107,7 @@ const Payment = () => {
             </button>
           </div>
 
-          {/* Дополнительная информация */}
-          <div className="bg-warm-50 rounded-lg p-6">
-            <h3 className="font-semibold text-warm-800 mb-3">
-              Безопасность платежей
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4 text-sm text-warm-600">
-              <div className="flex items-center gap-2">
-                <Icon name="Shield" size={16} />
-                <span>Защищенное соединение SSL</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Icon name="Lock" size={16} />
-                <span>Конфиденциальность данных</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Icon name="CheckCircle" size={16} />
-                <span>Проверенная платежная система</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Icon name="RefreshCw" size={16} />
-                <span>Возврат средств при необходимости</span>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
