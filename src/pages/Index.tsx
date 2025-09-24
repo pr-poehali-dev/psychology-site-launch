@@ -204,12 +204,12 @@ export default function Index() {
                   {item.label}
                 </button>
               ))}
-              <button 
-                className="bg-warm-600 hover:bg-warm-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
-                btn-pay-nldizlugp9shjhaznfvxvk9gp=""
+              <a 
+                href="/payment"
+                className="bg-warm-600 hover:bg-warm-700 text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-medium inline-block"
               >
                 Оплатить
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -669,12 +669,12 @@ export default function Index() {
               </div>
 
               <div className="flex gap-3">
-                <button 
-                  className="flex-1 bg-warm-600 hover:bg-warm-700 text-white px-4 py-2 rounded-md font-medium transition-colors"
-                  btn-pay-nldizlugp9shjhaznfvxvk9gp=""
+                <a 
+                  href="/payment"
+                  className="flex-1 bg-warm-600 hover:bg-warm-700 text-white px-4 py-2 rounded-md font-medium transition-colors text-center inline-block"
                 >
                   Перейти к оплате
-                </button>
+                </a>
                 <Button 
                   variant="outline" 
                   onClick={() => setPaymentModalOpen(false)}
