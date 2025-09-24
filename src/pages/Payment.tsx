@@ -1,0 +1,149 @@
+import { useState } from 'react';
+import { ArrowLeft } from 'lucide-react';
+import Icon from '@/components/ui/icon';
+
+declare global {
+  interface Window {
+    cpay: any;
+  }
+}
+
+const Payment = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handlePayment = () => {
+    setIsLoading(true);
+    
+    if (typeof window.cpay !== 'undefined') {
+      var paymentWidget = new window.cpay.PaymentWidget();
+      paymentWidget.init({
+        "merchantId":"65e582de-004b-4c24-96b2-bd0e0777e959",
+        "invoice":{"description":"MindCare - Психологические консультации"},
+        "amount":{"currency":"RUB","value":0},
+        "receipt":null,
+        "paymentForm":{
+          "theme":"light",
+          "primaryColor":"#58bfe8",
+          "productCard":{"title":"MindCare","description":"Психологическая поддержка","imageUrl":null},
+          "fields":[
+            {"type":"input","name":"customerName","label":"ФИО","hint":"Введите ваше полное имя","required":true,"selectOptions":null,"additionalAmount":null},
+            {"type":"input","name":"customerEmail","label":"E-mail","hint":"Необязательно","required":false,"selectOptions":null,"additionalAmount":null},
+            {"type":"input","name":"amount","label":"Сумма","hint":"Укажите стоимость консультации","required":true,"selectOptions":null,"additionalAmount":null}
+          ]
+        }
+      });
+    } else {
+      console.error('PayMaster SDK не загружен');
+      alert('Ошибка загрузки платежной системы. Попробуйте обновить страницу.');
+    }
+    
+    setIsLoading(false);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-warm-50 via-white to-secondary-50">
+      {/* Навигация */}
+      <div className="container mx-auto px-4 py-6">
+        <button 
+          onClick={() => window.history.back()}
+          className="flex items-center gap-2 text-warm-600 hover:text-warm-700 transition-colors mb-6"
+        >
+          <Icon name="ArrowLeft" size={20} />
+          Назад
+        </button>
+      </div>
+
+      {/* Основной контент */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-2xl mx-auto">
+          {/* Заголовок */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-warm-800 mb-4">
+              Оплата консультации
+            </h1>
+            <p className="text-lg text-warm-600">
+              Безопасная оплата психологических услуг
+            </p>
+          </div>
+
+          {/* Карточка оплаты */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <div className="text-center mb-8">
+              <div className="w-16 h-16 bg-warm-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="CreditCard" size={32} className="text-warm-600" />
+              </div>
+              <h2 className="text-2xl font-semibold text-warm-800 mb-2">
+                MindCare
+              </h2>
+              <p className="text-warm-600">
+                Профессиональная психологическая поддержка
+              </p>
+            </div>
+
+            {/* Информация об услугах */}
+            <div className="grid md:grid-cols-3 gap-4 mb-8">
+              <div className="text-center p-4 bg-warm-50 rounded-lg">
+                <h3 className="font-semibold text-warm-800 mb-1">Индивидуальная</h3>
+                <p className="text-warm-600">от 3000 ₽</p>
+              </div>
+              <div className="text-center p-4 bg-warm-50 rounded-lg">
+                <h3 className="font-semibold text-warm-800 mb-1">Семейная</h3>
+                <p className="text-warm-600">от 4000 ₽</p>
+              </div>
+              <div className="text-center p-4 bg-warm-50 rounded-lg">
+                <h3 className="font-semibold text-warm-800 mb-1">Групповая</h3>
+                <p className="text-warm-600">от 5000 ₽</p>
+              </div>
+            </div>
+
+            {/* Кнопка оплаты */}
+            <button
+              onClick={handlePayment}
+              disabled={isLoading}
+              className="w-full bg-warm-600 hover:bg-warm-700 disabled:opacity-50 text-white py-4 px-6 rounded-lg text-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2"
+            >
+              {isLoading ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  Загрузка...
+                </>
+              ) : (
+                <>
+                  <Icon name="CreditCard" size={20} />
+                  Перейти к оплате
+                </>
+              )}
+            </button>
+          </div>
+
+          {/* Дополнительная информация */}
+          <div className="bg-warm-50 rounded-lg p-6">
+            <h3 className="font-semibold text-warm-800 mb-3">
+              Безопасность платежей
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-warm-600">
+              <div className="flex items-center gap-2">
+                <Icon name="Shield" size={16} />
+                <span>Защищенное соединение SSL</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Icon name="Lock" size={16} />
+                <span>Конфиденциальность данных</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Icon name="CheckCircle" size={16} />
+                <span>Проверенная платежная система</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Icon name="RefreshCw" size={16} />
+                <span>Возврат средств при необходимости</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Payment;
