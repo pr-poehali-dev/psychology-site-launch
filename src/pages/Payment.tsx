@@ -62,10 +62,10 @@ const Payment = () => {
           {/* Карточка оплаты */}
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
             <div className="text-center mb-8">
-              <div className="w-16 h-16 bg-warm-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-stone-500">
                 <Icon name="CreditCard" size={32} className="text-warm-600" />
               </div>
-              <h2 className="font-semibold text-warm-800 mb-2 text-6xl">
+              <h2 className="font-semibold mb-2 text-6xl text-blue-700">
                 MindCare
               </h2>
               <p className="text-warm-600"></p>
@@ -91,7 +91,7 @@ const Payment = () => {
             <button
               onClick={handlePayment}
               disabled={isLoading}
-              className="w-1/2 mx-auto bg-warm-600 hover:bg-warm-700 disabled:opacity-50 text-white py-4 text-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2 rounded-3xl px-[15px]"
+              className="w-1/2 mx-auto hover:bg-warm-700 disabled:opacity-50 text-white py-4 font-semibold transition-colors duration-200 flex items-center justify-center gap-2 rounded-3xl px-[15px] text-lg bg-violet-600"
             >
               {isLoading ? (
                 <>
