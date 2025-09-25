@@ -36,9 +36,19 @@
           transform: translateY(-30px) !important;
         }
         
-        /* Альтернативные селекторы для модального окна */
-        .modal-dialog, .payment-modal, .widget-modal {
+        /* Дополнительные селекторы для PayMaster модального окна */
+        .cpay-payment-form, .cpay-widget, .cpay-dialog, .cpay-popup {
           transform: translateY(-30px) !important;
+        }
+        
+        /* Общие селекторы для модальных окон */
+        .modal, .modal-dialog, .payment-modal, .widget-modal, [class*="modal"], [class*="dialog"], [class*="popup"] {
+          transform: translateY(-30px) !important;
+        }
+        
+        /* Контейнер модального окна */
+        div[style*="position: fixed"], div[style*="z-index"] {
+          top: calc(50% - 30px) !important;
         }
       </style>
   </head>
