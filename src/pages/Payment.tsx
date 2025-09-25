@@ -14,8 +14,27 @@ const Payment = () => {
   const handlePayment = () => {
     setIsLoading(true);
     
-    // Открываем ссылку PayMaster в новой вкладке
-    window.open('https://paymaster.ru/cpay/00fa46a9-0be5-4537-8584-9f60e05e350b/', '_blank');
+    if (typeof window.cpay !== 'undefined') {
+      var paymentWidget = new window.cpay.PaymentWidget();
+      paymentWidget.init({
+        "merchantId":"65e582de-004b-4c24-96b2-bd0e0777e959",
+        "invoice":{"description":"MindCare - Психологические консультации"},
+        "amount":{"currency":"RUB","value":0},
+        "receipt":null,
+        "paymentForm":{
+          "theme":"light",
+          "primaryColor":"#58bfe8",
+          "productCard":{"title":"MindCare","description":"Psychological support","imageUrl":null},
+          "fields":[
+            {"type":"input","name":"customerName","label":"ФИО","hint":"Введите ваше полное имя","required":true,"selectOptions":null,"additionalAmount":null},
+            {"type":"input","name":"amount","label":"Сумма","hint":"Укажите стоимость консультации","required":true,"selectOptions":null,"additionalAmount":null}
+          ]
+        }
+      });
+    } else {
+      console.error('PayMaster SDK не загружен');
+      alert('Ошибка загрузки платежной системы. Попробуйте обновить страницу.');
+    }
     
     setIsLoading(false);
   };
