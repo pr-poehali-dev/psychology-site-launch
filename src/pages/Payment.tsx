@@ -46,7 +46,10 @@ const Payment = () => {
         <button 
           onClick={() => window.history.back()}
           className="flex items-center gap-2 text-warm-600 hover:text-warm-700 transition-colors mb-6"
-        ></button>
+        >
+          <Icon name="ArrowLeft" size={20} />
+          Назад
+        </button>
       </div>
 
       {/* Основной контент */}
