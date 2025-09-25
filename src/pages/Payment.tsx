@@ -44,7 +44,7 @@ const Payment = () => {
       {/* Навигация */}
       <div className="container mx-auto px-4 py-6">
         <div className="flex justify-center">
-          <button className="flex items-center gap-2 hover:text-warm-700 transition-colors mb-6 text-[#000000] text-xl font-extrabold" 
+          <button className="flex items-center gap-2 hover:text-warm-700 transition-colors mb-6 text-[#000000]" 
             onClick={() => window.history.back()}
             className="flex items-center gap-2 text-warm-600 hover:text-warm-700 transition-colors mb-6"
           >
