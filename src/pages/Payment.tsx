@@ -44,9 +44,9 @@ const Payment = () => {
       {/* Навигация */}
       <div className="container mx-auto px-4 py-6">
         <div className="flex justify-center">
-          <button className="flex items-center gap-2 hover:text-warm-700 transition-colors mb-6 text-[#000000]" 
+          <button 
             onClick={() => window.history.back()}
-            className="flex items-center gap-2 text-warm-600 hover:text-warm-700 transition-colors mb-6"
+            className="flex items-center gap-2 text-black hover:text-gray-800 transition-colors mb-6"
           >
             <Icon name="ArrowLeft" size={20} />
             Назад
