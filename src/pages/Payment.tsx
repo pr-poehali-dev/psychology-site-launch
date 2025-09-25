@@ -24,7 +24,7 @@ const Payment = () => {
         "paymentForm":{
           "theme":"light",
           "primaryColor":"#58bfe8",
-          "productCard":{"title":"MindCare","description":"Психологическая поддержка","imageUrl":null},
+          "productCard":{"title":"MindCare","description":"Psychological support","imageUrl":null},
           "fields":[
             {"type":"input","name":"customerName","label":"ФИО","hint":"Введите ваше полное имя","required":true,"selectOptions":null,"additionalAmount":null},
             {"type":"input","name":"amount","label":"Сумма","hint":"Укажите стоимость консультации","required":true,"selectOptions":null,"additionalAmount":null}
