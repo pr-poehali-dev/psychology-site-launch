@@ -45,7 +45,7 @@ const Payment = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="flex justify-center">
           <button 
-            onClick={() => window.history.back()}
+            onClick={() => window.close()}
             className="flex items-center gap-2 text-black hover:text-gray-800 transition-colors mb-6"
           >
             <Icon name="ArrowLeft" size={20} />
