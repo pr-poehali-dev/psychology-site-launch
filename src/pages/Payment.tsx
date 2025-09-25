@@ -41,18 +41,7 @@ const Payment = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-warm-50 via-white to-secondary-50">
-      {/* Навигация */}
-      <div className="container mx-auto px-4 py-6">
-        <div className="flex justify-center">
-          <button className="flex items-center gap-2 hover:text-warm-700 transition-colors mb-6 text-[#000000] text-xl font-extrabold" 
-            onClick={() => window.history.back()}
-            className="flex items-center gap-2 text-warm-600 hover:text-warm-700 transition-colors mb-6"
-          >
-            <Icon name="ArrowLeft" size={20} />
-            Назад
-          </button>
-        </div>
-      </div>
+
 
       {/* Основной контент */}
       <div className="container mx-auto px-4 py-12">
@@ -68,6 +57,15 @@ const Payment = () => {
             <div className="text-center mb-8">
               <div className="w-16 h-16 bg-warm-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Icon name="CreditCard" size={32} className="text-warm-600" />
+              </div>
+              <div className="flex justify-center mb-4">
+                <button 
+                  onClick={() => window.history.back()}
+                  className="flex items-center gap-2 text-warm-600 hover:text-warm-700 transition-colors"
+                >
+                  <Icon name="ArrowLeft" size={20} />
+                  Назад
+                </button>
               </div>
               <h2 className="font-semibold mb-2 text-6xl text-violet-700">
                 MindCare
