@@ -15,7 +15,7 @@ const Payment = () => {
     setIsLoading(true);
     
     if (typeof window.cpay !== 'undefined') {
-      var paymentWidget = new window.cpay.PaymentWidget();
+      const paymentWidget = new window.cpay.PaymentWidget();
       paymentWidget.init({
         "merchantId":"65e582de-004b-4c24-96b2-bd0e0777e959",
         "invoice":{"description":"MindCare - Психологические консультации"},
@@ -26,7 +26,7 @@ const Payment = () => {
           "primaryColor":"#58bfe8",
           "productCard":{"title":"MindCare","description":"Psychological support","imageUrl":null},
           "fields":[
-            {"type":"input","name":"customerName","label":"ФИО","hint":"Введите ваше полное имя","required":true,"selectOptions":null,"additionalAmount":null},
+            {"type":"input","name":"customerName","label":"Имя","hint":"Введите ваше имя","required":true,"selectOptions":null,"additionalAmount":null},
             {"type":"input","name":"amount","label":"Сумма","hint":"Укажите стоимость консультации","required":true,"selectOptions":null,"additionalAmount":null}
           ]
         }
